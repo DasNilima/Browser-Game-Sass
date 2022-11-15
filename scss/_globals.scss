@@ -1,0 +1,57 @@
+@import "variables";
+@import "mixins";
+
+html {
+    font-size: 100%;
+
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+	padding: 0;
+
+}
+
+body {
+    font-family: $font-stack;
+    font-size: $font-sm;
+    height: 100vh;
+    width: 100%;
+    border: 1rem solid;
+    // background: $lightGrayishBlue;
+    color:$light-color;
+    display: block;
+    overflow: hidden;
+    
+    @include breakpoint-up(medium) {
+        text-align: center;
+        font-size: $font-med;
+    }
+    
+    @include breakpoint-up(large) {
+        text-align: center;
+        font-size: $font-lg;
+    }
+}
+
+
+
+// Margin & padding classes
+$spaceamounts: (1,2,3,4,5);
+
+@each $space in $spaceamounts {
+    .m-#{$space} {
+        margin: #{$space}rem;
+    }
+    .my-#{$space} {
+        margin: #{$space}rem;
+    }
+
+    .p-#{$space} {
+        padding: #{$space}rem;
+    }
+    .py-#{$space} {
+        padding: #{$space}rem;
+    }
+    }

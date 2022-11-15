@@ -1,0 +1,35 @@
+
+@keyframes dance {
+    0%, 100% {
+        transform: rotate(0)
+    }
+    25% {
+        transform: rotate(-30deg)
+    }
+    75% {
+        transform: rotate(30deg)
+    }
+    }
+    
+@keyframes overlay-grow {
+    from {
+        background-color: rgba(219, 39, 39, 0);
+        font-size: 0;
+    }
+    to {
+        background-color: rgba(0, 0, 0, .8);
+        font-size: 8em;
+    }
+    }
+
+    .card {
+        &.visible .card-back {
+            transform: rotateY(-180deg); 
+        }
+        &.visible .card-front  {
+            transform: rotateY(0); 
+        }
+        &.matched .card-front .card-value {
+            animation: dance 1s linear infinite 500ms;
+            }
+    }

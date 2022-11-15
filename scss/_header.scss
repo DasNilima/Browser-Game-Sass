@@ -1,0 +1,118 @@
+@import "variables";
+@import "mixins";
+
+header {
+    h1 {
+        font-size: $font-xlg;
+        color: $primary-color;
+        font-weight: bold;
+        text-align: center;
+        padding: 0 0;
+    
+        @include breakpoint-up(medium){
+            padding: 1em 1em;
+            font-size: $font-xlg;
+        }
+
+        @include breakpoint-up(large){
+        font-size: $font-xlg;
+        padding: 0 0;
+    }
+}
+    h2 {
+        font-size:$font-lg;
+        color: $secondary-color;
+        font-weight: bold;
+        text-align: center;
+        padding: 0 0;
+        
+        @include breakpoint-up(medium){
+            font-size: $font-lg;
+            padding: 1em 1em;
+        }        
+        @include breakpoint-up(large) {
+            font-size:$font-lg;
+            padding: 0 0;    
+    }
+}
+}
+.score-info li {
+    font-size: $font-med;
+    display: inline-block;
+    list-style-type: none;
+    font-weight: bold;
+    padding: 1rem 1rem;
+    position: relative;
+    left: 20%;
+    
+    @include breakpoint-up(medium) {
+        font-size: $font-xlg;
+        padding: 0.5em 0.5em;
+        position: relative;
+        left: 1%;
+    }
+    @include breakpoint-up(large) {
+        font-size: $font-lg;
+        position: relative;
+        left: -0.5%;
+    }
+}
+.display-text {
+    font-size: $font-sm;
+    text-align: center;
+
+    @include breakpoint-up(medium) {
+        font-size: $font-med;
+        text-align: center;
+}
+    
+    @include breakpoint-up(large) {
+        font-size: $font-lg;
+        text-align: center;
+}
+
+.overlay-text {
+        top: 0px;
+        left: 0px;
+        right: 0px;
+        bottom: 0px;
+        z-index: 100;
+        display: none;
+        position: fixed;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        color:$light-color;
+        font-family: $font-stack;
+        transition: background-color 500ms, font-size 500ms;
+        }
+        
+        .overlay-text-small {
+        font-size: $font-med;
+        
+        @include breakpoint-up(medium) {
+            font-size: $font-lg;
+            text-align: center;
+        } 
+        
+        @include breakpoint-up(large) {
+            font-size: $font-xlg;
+            text-align: center;
+        }  
+        }
+        
+        .overlay-text.visible {
+        display: flex;
+        font-size: $font-sm;
+        animation: overlay-grow 500ms forwards;
+        
+        @include breakpoint-up(medium) {
+            font-size: $font-sm;
+            text-align: center;
+        }
+        @include breakpoint-up(large) {
+            font-size: $font-sm;
+            text-align: center;
+        }  
+    }
+}

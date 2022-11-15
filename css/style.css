@@ -1,0 +1,478 @@
+@-webkit-keyframes dance {
+  0%, 100% {
+    transform: rotate(0);
+  }
+  25% {
+    transform: rotate(-30deg);
+  }
+  75% {
+    transform: rotate(30deg);
+  }
+}
+@keyframes dance {
+  0%, 100% {
+    transform: rotate(0);
+  }
+  25% {
+    transform: rotate(-30deg);
+  }
+  75% {
+    transform: rotate(30deg);
+  }
+}
+@-webkit-keyframes overlay-grow {
+  from {
+    background-color: rgba(219, 39, 39, 0);
+    font-size: 0;
+  }
+  to {
+    background-color: rgba(0, 0, 0, 0.8);
+    font-size: 8em;
+  }
+}
+@keyframes overlay-grow {
+  from {
+    background-color: rgba(219, 39, 39, 0);
+    font-size: 0;
+  }
+  to {
+    background-color: rgba(0, 0, 0, 0.8);
+    font-size: 8em;
+  }
+}
+.card.visible .card-back {
+  transform: rotateY(-180deg);
+}
+.card.visible .card-front {
+  transform: rotateY(0);
+}
+.card.matched .card-front .card-value {
+  -webkit-animation: dance 1s linear infinite 500ms;
+          animation: dance 1s linear infinite 500ms;
+}
+
+@keyframes dance {
+  0%, 100% {
+    transform: rotate(0);
+  }
+  25% {
+    transform: rotate(-30deg);
+  }
+  75% {
+    transform: rotate(30deg);
+  }
+}
+@keyframes overlay-grow {
+  from {
+    background-color: rgba(219, 39, 39, 0);
+    font-size: 0;
+  }
+  to {
+    background-color: rgba(0, 0, 0, 0.8);
+    font-size: 8em;
+  }
+}
+.card.visible .card-back {
+  transform: rotateY(-180deg);
+}
+.card.visible .card-front {
+  transform: rotateY(0);
+}
+.card.matched .card-front .card-value {
+  -webkit-animation: dance 1s linear infinite 500ms;
+          animation: dance 1s linear infinite 500ms;
+}
+
+.card {
+  position: relative;
+  left: 20%;
+  top: -10%;
+  cursor: pointer;
+  border-radius: 1rem;
+  height: 50px;
+  width: 40px;
+}
+@media (min-width: 40em) {
+  .card {
+    height: 50px;
+    width: 30px;
+    position: relative;
+    left: 25%;
+    top: -20%;
+  }
+}
+@media (min-width: 64em) {
+  .card {
+    height: 80px;
+    width: 80px;
+    position: relative;
+    left: 10%;
+    top: -11%;
+  }
+}
+.card-grid {
+  width: 40vh;
+  height: 60vh;
+  margin: 0 auto;
+  display: grid;
+  grid-gap: 0.1rem;
+  justify-content: center;
+  align-items: center;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: repeat(4, 1fr);
+  background-color: hsl(192deg, 93%, 60%);
+  box-shadow: 0 0 5px 5px hsl(192deg, 93%, 60%);
+}
+@media (min-width: 40em) {
+  .card-grid {
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: repeat(4, 1fr);
+    position: relative;
+    top: 5%;
+    width: 60vh;
+    height: 60vh;
+    grid-gap: 0.5rem;
+  }
+}
+@media (min-width: 64em) {
+  .card-grid {
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: repeat(4, 1fr);
+    position: relative;
+    top: -1%;
+    right: -1%;
+    width: 85vh;
+    height: 75vh;
+    grid-gap: 1rem;
+  }
+}
+.card-face {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 12px;
+  border-width: 1.5px;
+  border-style: solid;
+  overflow: hidden;
+  transition: transform 500ms ease-in-out;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+}
+@media (min-width: 40em) {
+  .card-face {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+@media (min-width: 64em) {
+  .card-face {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+.card-face.card-back img {
+  width: 50px;
+  min-height: 5rem;
+  align-items: center;
+}
+@media (min-width: 40em) {
+  .card-face.card-back img {
+    width: 80px;
+    min-height: 8rem;
+  }
+}
+@media (min-width: 64em) {
+  .card-face.card-back img {
+    width: 110px;
+    min-height: 7rem;
+  }
+}
+.card-face.card-front img {
+  width: 40px;
+  min-height: 4rem;
+}
+@media (min-width: 40em) {
+  .card-face.card-front img {
+    width: 70px;
+    min-height: 7rem;
+  }
+}
+@media (min-width: 64em) {
+  .card-face.card-front img {
+    width: 100px;
+    min-height: 7rem;
+  }
+}
+.card-back {
+  background-color: hsl(233deg, 26%, 24%);
+  border-color: #FF6D00;
+  transform: rotateY(0);
+}
+.card-back:hover .peekboo {
+  transform: translateY(0);
+}
+.card-value {
+  position: relative;
+  transition: transform 100ms ease-in-out;
+  transform: scale(0.9);
+}
+.card-front {
+  background-color: #FFC300;
+  border-color: hsl(233deg, 26%, 24%);
+  transform: rotateY(180deg);
+}
+.card-front:hover .card-value {
+  transform: scale(1);
+}
+.card .peekboo {
+  align-self: flex-start;
+  transition: transform 100ms ease-in-out;
+  transform: translateY(-10px);
+}
+
+html {
+  font-size: 100%;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Open Sans", "Cinzel";
+  font-size: 0.5rem;
+  height: 100vh;
+  width: 100%;
+  border: 1rem solid;
+  color: #FFC300;
+  display: block;
+  overflow: hidden;
+}
+@media (min-width: 40em) {
+  body {
+    text-align: center;
+    font-size: 1.2rem;
+  }
+}
+@media (min-width: 64em) {
+  body {
+    text-align: center;
+    font-size: 1.5rem;
+  }
+}
+
+.m-1 {
+  margin: 1rem;
+}
+
+.my-1 {
+  margin: 1rem;
+}
+
+.p-1 {
+  padding: 1rem;
+}
+
+.py-1 {
+  padding: 1rem;
+}
+
+.m-2 {
+  margin: 2rem;
+}
+
+.my-2 {
+  margin: 2rem;
+}
+
+.p-2 {
+  padding: 2rem;
+}
+
+.py-2 {
+  padding: 2rem;
+}
+
+.m-3 {
+  margin: 3rem;
+}
+
+.my-3 {
+  margin: 3rem;
+}
+
+.p-3 {
+  padding: 3rem;
+}
+
+.py-3 {
+  padding: 3rem;
+}
+
+.m-4 {
+  margin: 4rem;
+}
+
+.my-4 {
+  margin: 4rem;
+}
+
+.p-4 {
+  padding: 4rem;
+}
+
+.py-4 {
+  padding: 4rem;
+}
+
+.m-5 {
+  margin: 5rem;
+}
+
+.my-5 {
+  margin: 5rem;
+}
+
+.p-5 {
+  padding: 5rem;
+}
+
+.py-5 {
+  padding: 5rem;
+}
+
+header h1 {
+  font-size: 2rem;
+  color: #0bf5ce;
+  font-weight: bold;
+  text-align: center;
+  padding: 0 0;
+}
+@media (min-width: 40em) {
+  header h1 {
+    padding: 1em 1em;
+    font-size: 2rem;
+  }
+}
+@media (min-width: 64em) {
+  header h1 {
+    font-size: 2rem;
+    padding: 0 0;
+  }
+}
+header h2 {
+  font-size: 1.5rem;
+  color: #FF6D00;
+  font-weight: bold;
+  text-align: center;
+  padding: 0 0;
+}
+@media (min-width: 40em) {
+  header h2 {
+    font-size: 1.5rem;
+    padding: 1em 1em;
+  }
+}
+@media (min-width: 64em) {
+  header h2 {
+    font-size: 1.5rem;
+    padding: 0 0;
+  }
+}
+
+.score-info li {
+  font-size: 1.2rem;
+  display: inline-block;
+  list-style-type: none;
+  font-weight: bold;
+  padding: 1rem 1rem;
+  position: relative;
+  left: 20%;
+}
+@media (min-width: 40em) {
+  .score-info li {
+    font-size: 2rem;
+    padding: 0.5em 0.5em;
+    position: relative;
+    left: 1%;
+  }
+}
+@media (min-width: 64em) {
+  .score-info li {
+    font-size: 1.5rem;
+    position: relative;
+    left: -0.5%;
+  }
+}
+
+.display-text {
+  font-size: 0.5rem;
+  text-align: center;
+}
+@media (min-width: 40em) {
+  .display-text {
+    font-size: 1.2rem;
+    text-align: center;
+  }
+}
+@media (min-width: 64em) {
+  .display-text {
+    font-size: 1.5rem;
+    text-align: center;
+  }
+}
+.display-text .overlay-text {
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  z-index: 100;
+  display: none;
+  position: fixed;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: #FFC300;
+  font-family: "Open Sans", "Cinzel";
+  transition: background-color 500ms, font-size 500ms;
+}
+.display-text .overlay-text-small {
+  font-size: 1.2rem;
+}
+@media (min-width: 40em) {
+  .display-text .overlay-text-small {
+    font-size: 1.5rem;
+    text-align: center;
+  }
+}
+@media (min-width: 64em) {
+  .display-text .overlay-text-small {
+    font-size: 2rem;
+    text-align: center;
+  }
+}
+.display-text .overlay-text.visible {
+  display: flex;
+  font-size: 0.5rem;
+  -webkit-animation: overlay-grow 500ms forwards;
+          animation: overlay-grow 500ms forwards;
+}
+@media (min-width: 40em) {
+  .display-text .overlay-text.visible {
+    font-size: 0.5rem;
+    text-align: center;
+  }
+}
+@media (min-width: 64em) {
+  .display-text .overlay-text.visible {
+    font-size: 0.5rem;
+    text-align: center;
+  }
+}/*# sourceMappingURL=style.css.map */
