@@ -1,5 +1,6 @@
 @import "variables";
 @import "mixins";
+@import "theme";
 
 header {
     h1 {
@@ -88,10 +89,10 @@ header {
         }
         
         .overlay-text-small {
-        font-size: $font-med;
+        font-size: $font-lg;
         
         @include breakpoint-up(medium) {
-            font-size: $font-lg;
+            font-size: $font-xlg;
             text-align: center;
         } 
         
@@ -107,11 +108,11 @@ header {
         animation: overlay-grow 500ms forwards;
         
         @include breakpoint-up(medium) {
-            font-size: $font-sm;
+            font-size: $font-med;
             text-align: center;
         }
         @include breakpoint-up(large) {
-            font-size: $font-sm;
+            font-size: $font-med;
             text-align: center;
         }  
     }

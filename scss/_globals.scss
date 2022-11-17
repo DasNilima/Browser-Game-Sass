@@ -1,10 +1,7 @@
 @import "variables";
 @import "mixins";
+@import "theme";
 
-html {
-    font-size: 100%;
-
-}
 
 * {
     box-sizing: border-box;
@@ -17,12 +14,13 @@ body {
     font-family: $font-stack;
     font-size: $font-sm;
     height: 100vh;
-    width: 100%;
+    width: 100vw;
     border: 1rem solid;
-    // background: $lightGrayishBlue;
     color:$light-color;
     display: block;
     overflow: hidden;
+    background: $background-color;
+    transition: 0.5s;
     
     @include breakpoint-up(medium) {
         text-align: center;
