@@ -1,3 +1,10 @@
+const body = document.querySelector('body');
+const toggle = document.getElementById('toggle');
+toggle.onclick = function(){
+    toggle.classList.toggle('active');
+    body.classList.toggle('active');
+}
+
 class AudioAssets {
     constructor() {
         this.bgMusic = new Audio('assets/audio/bgMusic.mp3');
@@ -149,7 +156,7 @@ if (document.readyState == 'loading') {
 function ready() {
     let overlays = Array.from(document.getElementsByClassName('overlay-text'));
     let cards = Array.from(document.getElementsByClassName('card'));
-    let game = new PeekABoo(10, cards);
+    let game = new PeekABoo(100, cards);
 
     overlays.forEach(overlay => {
         overlay.addEventListener('click', () => {
