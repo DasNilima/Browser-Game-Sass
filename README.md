@@ -13,7 +13,7 @@ The designs were created to the following widths:
  - Laptop and Desktop: 1024px & 1440px
 ## Live Project link
 
-
+[Memory-Game](https://dasnilima.github.io/Browser-Game-Sass/)
 ## Credits: 
 - When I was working on the idea of this game, my thought came into my mind if my son 3+ is the target audience how is he able to play? 
 ## List of technologies used to build the game
